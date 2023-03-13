@@ -1,0 +1,128 @@
+
+<app-toolbar></app-toolbar>
+
+<div class="descripcion">
+    <span class="example-spacer"></span>
+    <span>Los datos recaudados son exclusivos para facturación electronica</span>
+</div>
+<div class="contenido">
+    <mat-card>
+        <mat-card-content >            
+            <form class="formclass">   
+                <hr class="hr_id" style="background-color: {{hrAttrib.hr_id}} ">
+                <div>
+                    <mat-form-field  id="componenfill">
+                        <mat-label>Nº Identificación</mat-label>
+                        <input matInput placeholder="123456789">
+                        <mat-icon matSuffix>search</mat-icon>                        
+                    </mat-form-field>   
+                </div>
+                <hr class="hr_td" style="background-color: {{hrAttrib.hr_td}} ">
+                <div>
+                    <mat-form-field appearance="fill" id="componenfill">
+                        <mat-label>Tipo de Documento</mat-label>
+                        <mat-select>
+                            <mat-option *ngFor="let tipoDoc of tiposDoc" [value]="tipoDoc.value">
+                                {{tipoDoc.viewValue}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div> 
+                <hr class="hr_pn" style="background-color: {{hrAttrib.hr_pn}} ">
+                <div>
+                    <mat-form-field  id="componenfill">
+                        <mat-label>Primer Nombre</mat-label>
+                        <input matInput placeholder="Ingrese primer nombre aquí!">                       
+                    </mat-form-field>   
+                </div>    
+                <hr class="hr_sn" style="background-color: {{hrAttrib.hr_sn}} ">    
+                <div>
+                    <mat-form-field  id="componenfill">
+                        <mat-label>Segundo Nombre</mat-label>
+                        <input matInput placeholder="Ingrese segundo nombre aquí!">                       
+                    </mat-form-field>   
+                </div>     
+                <hr class="hr_pa" style="background-color: {{hrAttrib.hr_pa}} ">   
+                <div>
+                    <mat-form-field  id="componenfill">
+                        <mat-label>Primer Apellido</mat-label>
+                        <input matInput placeholder="Ingrese primer apellido aquí!">                       
+                    </mat-form-field>   
+                </div>     
+                <hr class="hr_sa" style="background-color: {{hrAttrib.hr_sa}} ">   
+                <div>
+                    <mat-form-field  id="componenfill">
+                        <mat-label>Segundo Apellido</mat-label>
+                        <input matInput placeholder="Ingrese segundo apellido aquí!">                       
+                    </mat-form-field>   
+                </div>   
+                <hr class="hr_di" style="background-color: {{hrAttrib.hr_di}} ">     
+                <div>
+                    <mat-form-field  id="componenfill">
+                        <mat-label>Dirección</mat-label>
+                        <input matInput placeholder="Ingrese su dirección aquí!">                       
+                    </mat-form-field>   
+                </div>        
+                <hr class="hr_em" style="background-color: {{hrAttrib.hr_em}} ">
+                <div>
+                    <mat-form-field  id="componenfill">
+                        <mat-label>E-Mail</mat-label>
+                        <input matInput placeholder="Ingrese correo Electronico aquí!">                       
+                    </mat-form-field>   
+                </div>    
+                <hr class="hr_ci" style="background-color: {{hrAttrib.hr_ci}} ">    
+                <div>
+                    <mat-form-field  id="componenfill">
+                        <mat-label>Ciudad</mat-label>
+                        <input matInput placeholder="Ingrese ciudad aquí!">                       
+                    </mat-form-field>   
+                </div>        
+                <hr class="hr_de" style="background-color: {{hrAttrib.hr_de}} ">
+                <div>
+                    <mat-form-field  id="componenfill">
+                        <mat-label>Departamento</mat-label>
+                        <input matInput placeholder="Ingrese Departamento aquí!">                       
+                    </mat-form-field>   
+                </div>        
+                <hr class="hr_rg" style="background-color: {{hrAttrib.hr_rg}} ">
+                <div>
+                    <mat-form-field appearance="fill" id="componenfill">
+                        <mat-label>Regímen</mat-label>
+                        <mat-select>
+                            <mat-option *ngFor="let tipoDoc of tiposDoc" [value]="tipoDoc.value">
+                                {{tipoDoc.viewValue}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div> 
+                <hr class="hr_rt" style="background-color: {{hrAttrib.hr_rt}} ">
+                <div>
+                    <mat-form-field appearance="fill" id="componenfill">
+                        <mat-label>Regimen Tributario</mat-label>
+                        <mat-select>
+                            <mat-option *ngFor="let tipoDoc of tiposDoc" [value]="tipoDoc.value">
+                                {{tipoDoc.viewValue}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>  
+                <section  id="componenfill">
+                    <!-- [(ngModel)]="checked" -->
+                    <mat-checkbox class="chechAuth">Autorizo el uso de mis datos</mat-checkbox>
+                  </section>
+                <div class="example-container" cdkScrollable id="componenfill">
+                    <button class="btn_form" 
+                            mat-raised-button #tooltip="matTooltip"
+                            matTooltip="Info about the action"
+                            [matTooltipPosition]="position.value!"
+                            matTooltipHideDelay="100000"
+                            aria-label="Button that displays a tooltip that hides when scrolled out of the container"
+                            >
+                      GUARDAR FORMLARIO
+                    </button>
+                </div>                                                                                                                          
+            </form>                      
+        </mat-card-content>
+    </mat-card>
+</div>
+  

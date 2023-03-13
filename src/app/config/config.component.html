@@ -1,0 +1,64 @@
+
+<app-toolbar></app-toolbar>
+
+<div class="descripcion">
+    <span class="example-spacer"></span>
+    <span>fomulario de conexión con la base de datos</span>
+</div>
+<div class="contenido">
+    <mat-card>
+        <mat-card-content >            
+            <form class="formclass">   
+                <hr class="hr_in" style="background-color: {{hrAttrib.hr_in}} ">
+                <div>
+                    <mat-form-field  id="componenfill">
+                        <mat-label>Instancia</mat-label>
+                        <input matInput placeholder="Ingrese la instancia aquí!">                       
+                    </mat-form-field>   
+                </div>    
+                <hr class="hr_us" style="background-color: {{hrAttrib.hr_us}} ">    
+                <div>
+                    <mat-form-field  id="componenfill">
+                        <mat-label>Usuario</mat-label>
+                        <input matInput placeholder="Ingrese el usuario aquí!">                       
+                    </mat-form-field>   
+                </div>     
+                <hr class="hr_ct" style="background-color: {{hrAttrib.hr_ct}} ">   
+                <div>
+                    <mat-form-field  id="componenfill">
+                        <mat-label>Contraseña</mat-label>
+                        <input matInput placeholder="Ingrese la contraseña aquí!">                       
+                    </mat-form-field>   
+                </div>     
+                <hr class="hr_bd" style="background-color: {{hrAttrib.hr_bd}} ">   
+                <div>
+                    <mat-form-field  id="componenfill">
+                        <mat-label>Base de Datos</mat-label>
+                        <input matInput placeholder="Ingrese la base de datos aquí!">                       
+                    </mat-form-field>   
+                </div>   
+                <div class="example-container" cdkScrollable id="componenfill">
+                    <button class="btn_form" 
+                            mat-raised-button #tooltip="matTooltip"
+                            matTooltip="Info about the action"
+                            matTooltipHideDelay="100000"
+                            aria-label="Button that displays a tooltip that hides when scrolled out of the container"
+                            >
+                      PROBAR CONEXIÓN
+                    </button>
+                </div>   
+                <div class="example-container" cdkScrollable id="componenfill">
+                    <button class="btn_form" 
+                            mat-raised-button #tooltip="matTooltip"
+                            matTooltip="Info about the action"
+                            matTooltipHideDelay="100000"
+                            aria-label="Button that displays a tooltip that hides when scrolled out of the container"
+                            >
+                      GUARDAR CONEXIÓN
+                    </button>
+                </div>                                                                                                                          
+            </form>                      
+        </mat-card-content>
+    </mat-card>
+</div>
+  

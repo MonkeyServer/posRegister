@@ -1,0 +1,10 @@
+*{
+    background-color: #53A2A7;
+    color:aliceblue;
+   
+}
+
+mat-toolbar-row{
+    display: grid;
+    place-items: center;
+}

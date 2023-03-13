@@ -1,0 +1,105 @@
+ 
+
+.descripcion{
+    color:aliceblue;
+    text-align: center;
+    padding-top: 10px;
+    height: 50px;
+    width: auto;
+}
+
+
+.contenido{
+    padding: 10px;
+}
+mat-card{
+    width: auto;
+    height: 100%;
+}
+mat-card > mat-card-content{
+    background-color: #783064;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    border-radius: 25px;
+    border-color: aliceblue;
+    border: 2px;
+    -webkit-box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.75);
+}
+
+
+
+.formclass{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+·roundCompt{
+    border-radius: 25px;
+    background-color: red;
+}
+
+.formclass > div{
+    width: 100%;   
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+#componenfill{
+    width: 50%;
+   
+}
+hr{
+    width: 50%;
+}
+
+@media (max-width: 600px) {
+    #componenfill{
+        width: 95%;
+    }
+
+    hr{
+        width: 95%;
+        height: 1px;;
+    }
+  }
+  
+  .mat-select-panel {
+    position: absolute;
+    top: 32px;
+    left: 4px;
+    min-width: calc(100% + 22px) !important;
+    border-radius: 50px !important;
+    border: 1px solid blue;
+    border-top-style: none;
+  }
+  
+  .mat-form-field-appearance-fill .mat-form-field-fill-start {
+    border-radius: 50px !important;
+    border: 1px solid blue !important;
+    border-right-style: none !important;
+  }
+  
+.mat-form-field-appearance-fill .mat-form-field-fill-end {
+    border-radius: 50px !important;
+    border: 1px solid  white !important;
+    border-left-style: none !important;
+}
+
+.btn_form{
+    background-color: #53A2A7;
+    color:aliceblue;
+    height: 40px;
+    width: 100%;
+}
+
+.chechAuth > * {
+    color: rgb(122, 177, 224);
+}
+
+.mdc-form-field > label {
+    color: white !important;
+}
