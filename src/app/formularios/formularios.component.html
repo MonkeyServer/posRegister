@@ -1,0 +1,175 @@
+
+<app-toolbar [empresa]="empresa"></app-toolbar>
+
+<div class="descripcion">
+    <span class="example-spacer"></span>
+    <span>Los datos recaudados son exclusivos para facturación electronica</span>
+</div>
+<div class="contenido">
+    <mat-card>
+        <mat-card-content >            
+            <form class="formclass"  [formGroup] = "form">   
+                <hr class="hr_id" style="background-color: {{hrAttrib.hr_id.color}}; display:{{hrAttrib.hr_id.hidden}}; ">
+                <div style="display:{{hrAttrib.hr_id.hidden}};" id="idComponentill">
+                    <mat-form-field  id="componenfill">
+                        <mat-label>Nº Identificación</mat-label>
+                        <input matInput placeholder="123456789" (keyup.enter)="getUsuario()" formControlName="hr_id" [disabled]= "hrAttrib.hr_id.disabled" >
+                        <mat-icon matSuffix>search</mat-icon>                        
+                    </mat-form-field>   
+                </div>
+                <hr class="hr_td" style="background-color: {{hrAttrib.hr_td}}; display:{{hrAttrib.hr_td.hidden}}; ">
+                <div style="display:{{hrAttrib.hr_td.hidden}};" id="idComponentill"> 
+                    <mat-form-field appearance="fill" id="componenfill">
+                        <mat-label>Tipo de Documento</mat-label>
+                        <mat-select matNativeControl [(value)]="hrAttrib.hr_td.value" name="hr_td" formControlName="hr_td" (selectionChange)="validarTipoDocumento(null)" >
+                            <mat-option *ngFor="let tipoDoc of tiposDoc" [value]="tipoDoc.POSICION" >
+                                {{tipoDoc.VALOR}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div> 
+                <hr class="hr_tp" style="background-color: {{hrAttrib.hr_tp}}; display:{{hrAttrib.hr_tp.hidden}}; ">
+                <div style="display:{{hrAttrib.hr_tp.hidden}};" id="idComponentill"> 
+                    <mat-form-field appearance="fill" id="componenfill">
+                        <mat-label>Tipo persona</mat-label>
+                        <mat-select matNativeControl [(value)]="hrAttrib.hr_tp.value" name="hr_tp" formControlName="hr_tp" (selectionChange)="validarTipoPersona()" >
+                            <mat-option *ngFor="let tipoPer of tipoPersona" [value]="tipoPer.POSICION" >
+                                {{tipoPer.VALOR}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div> 
+                <hr class="hr_dv" style="background-color: {{hrAttrib.hr_dv.color}}; display:{{hrAttrib.hr_dv.hidden}}; ">
+                <div style="display:{{hrAttrib.hr_dv.hidden}} ;" id="idComponentill">
+                    <mat-form-field  id="componenfill">
+                        <mat-label>Digito de Verificación</mat-label>
+                        <input matInput placeholder="Ingrese digito de verificacion aquí!" formControlName="hr_dv">                        
+                    </mat-form-field>   
+                </div>
+                <hr class="hr_pn" style="background-color: {{hrAttrib.hr_pn.color}}; display:{{hrAttrib.hr_pn.hidden}}; ">
+                <div style="display:{{hrAttrib.hr_pn.hidden}};" id="idComponentill">
+                    <mat-form-field  id="componenfill">
+                        <mat-label>Primer Nombre</mat-label>
+                        <input matInput placeholder="Ingrese primer nombre aquí!" formControlName="hr_pn">                       
+                    </mat-form-field>   
+                </div>    
+                <hr class="hr_sn" style="background-color: {{hrAttrib.hr_sn.color}}; display:{{hrAttrib.hr_sn.hidden}}; ">    
+                <div style="display:{{hrAttrib.hr_sn.hidden}};" id="idComponentill">
+                    <mat-form-field  id="componenfill">
+                        <mat-label>Segundo Nombre</mat-label>
+                        <input matInput placeholder="Ingrese segundo nombre aquí!" formControlName="hr_sn" >                        
+                    </mat-form-field>   
+                </div>     
+                <hr class="hr_pa" style="background-color: {{hrAttrib.hr_pa.color}}; display:{{hrAttrib.hr_pa.hidden}}; ">   
+                <div style="display:{{hrAttrib.hr_pa.hidden}};" id="idComponentill">
+                    <mat-form-field  id="componenfill">
+                        <mat-label>Primer Apellido</mat-label>
+                        <input matInput placeholder="Ingrese primer apellido aquí!" formControlName="hr_pa" >                        
+                    </mat-form-field>   
+                </div>     
+                <hr class="hr_sa" style="background-color: {{hrAttrib.hr_sa.color}}; display:{{hrAttrib.hr_sa.hidden}}; ">   
+                <div style="display:{{hrAttrib.hr_sa.hidden}};" id="idComponentill">
+                    <mat-form-field  id="componenfill">
+                        <mat-label>Segundo Apellido</mat-label>
+                        <input matInput placeholder="Ingrese segundo apellido aquí!"  formControlName="hr_sa">                        
+                    </mat-form-field>   
+                </div>   
+                <hr class="hr_rs" style="background-color: {{hrAttrib.hr_rs.color}}; display:{{hrAttrib.hr_rs.hidden}}; ">   
+                <div style="display:{{hrAttrib.hr_rs.hidden}};" id="idComponentill">
+                    <mat-form-field  id="componenfill">
+                        <mat-label>Razon Social</mat-label>
+                        <input matInput placeholder="Ingrese razón social aquí!" formControlName="hr_rs">                        
+                    </mat-form-field>   
+                </div>   
+                <hr class="hr_di" style="background-color: {{hrAttrib.hr_di.color}}; display:{{hrAttrib.hr_di.hidden}}; ">     
+                <div style="display:{{hrAttrib.hr_di.hidden}};" id="idComponentill">
+                    <mat-form-field  id="componenfill">
+                        <mat-label>Dirección</mat-label>
+                        <input matInput placeholder="Ingrese su dirección aquí!" formControlName="hr_di">                        
+                    </mat-form-field>   
+                </div>    
+                <hr class="hr_te" style="background-color: {{hrAttrib.hr_te.color}}; display:{{hrAttrib.hr_te.hidden}}; ">     
+                <div style="display:{{hrAttrib.hr_te.hidden}};" id="idComponentill">
+                    <mat-form-field  id="componenfill">
+                        <mat-label>Telefono:</mat-label>
+                        <input type="number" matInput placeholder="Ingrese su dirección aquí!" formControlName="hr_te">                        
+                    </mat-form-field>   
+                </div>      
+                <hr class="hr_em" style="background-color: {{hrAttrib.hr_em.color}}; display:{{hrAttrib.hr_em.hidden}}; ">
+                <div style="display:{{hrAttrib.hr_em.hidden}};" id="idComponentill">
+                    <mat-form-field  id="componenfill">
+                        <mat-label>E-Mail</mat-label>
+                        <input matInput placeholder="Ingrese correo Electronico aquí!" formControlName="hr_em">                        
+                    </mat-form-field>   
+                </div>    
+                <hr class="hr_ci" style="background-color: {{hrAttrib.hr_ci.color}}; display:{{hrAttrib.hr_ci.hidden}}; ">    
+                <div style="display:{{hrAttrib.hr_ci.hidden}};" id="idComponentill">
+                    <mat-form-field  id="componenfill">
+                        <mat-label>Ciudad</mat-label>
+                        <input matInput placeholder="Ingrese ciudad aquí!" formControlName="hr_ci">                        
+                    </mat-form-field>   
+                </div>        
+                <hr class="hr_de" style="background-color: {{hrAttrib.hr_de.color}}; display:{{hrAttrib.hr_de.hidden}}; ">
+                <div style="display:{{hrAttrib.hr_de.hidden}} ;" id="idComponentill">
+                    <mat-form-field  id="componenfill">
+                        <mat-label>Departamento</mat-label>
+                        <input matInput placeholder="Ingrese Departamento aquí!" formControlName="hr_de">                        
+                    </mat-form-field>   
+                </div> 
+
+                <hr class="hr_rg" style="background-color: {{hrAttrib.hr_rg.color}}; display:{{hrAttrib.hr_rg.hidden}}; ">
+                <div style="display:{{hrAttrib.hr_rg.hidden}};" id="idComponentill">
+                    <mat-form-field appearance="fill" id="componenfill">
+                        <mat-label>Regímen</mat-label>
+                        <mat-select  formControlName="hr_rg">
+                            <mat-option *ngFor="let reg of regimen" [value]="reg.POSICION">
+                                {{reg.VALOR}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div> 
+                <hr class="hr_rt" style="background-color: {{hrAttrib.hr_rt}}; display:{{hrAttrib.hr_rt.hidden}} ">
+                <div style="display:{{hrAttrib.hr_rt.hidden}};" id="idComponentill">
+                    <mat-form-field appearance="fill" id="componenfill">
+                        <mat-label>Regimen Tributario</mat-label>
+                        <mat-select  formControlName="hr_rt">
+                            <mat-option *ngFor="let regT of regimenTributario" [value]="regT.POSICION">
+                                {{regT.VALOR}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>  
+                <section  id="componenfill">
+                    <!-- [(ngModel)]="checked" -->
+                    <mat-checkbox class="chechAuth" formControlName="hr_au">Autorizo el uso de mis datos</mat-checkbox>
+                </section>
+                <div class="example-container" cdkScrollable id="componenfill">
+                    <button class="btn_form" 
+                            mat-raised-button #tooltip="matTooltip"
+                            matTooltip ="Info about the action"
+                            matTooltipHideDelay="100000"
+                            aria-label="Bun scrolled out of the container"
+                            (click)="setUsuario()"
+                            [disabled]="hrAttrib.hr_bt.disabled"
+                            >
+                      GUARDAR FORMLARIO
+                    </button>
+                </div>  
+                <br> 
+                <div class="example-container" cdkScrollable id="componenfill">
+                    <button class="btn_formWarning " 
+                            mat-raised-button #tooltip="matTooltip"
+                            matTooltip ="Info about the action"
+                            matTooltipHideDelay="100000"
+                            aria-label="Bun scrolled out of the container"
+                            (click)="inicializarFormulario()"
+                            [disabled]="hrAttrib.hr_bt.disabled"
+                            >
+                      LIMPIAR FORMLARIO
+                    </button>
+                </div>                                                                                                                           
+            </form>                      
+        </mat-card-content>
+    </mat-card>
+</div>
+  

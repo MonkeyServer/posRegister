@@ -1,0 +1,59 @@
+
+<app-toolbar [ind_undo]=true [empresa]="_empresa"></app-toolbar>
+
+<div class="descripcion">
+    <span class="example-spacer"></span>
+    <span>fomulario de conexión con la base de datos local</span>
+</div>
+<div class="contenido">
+    <mat-card>
+        <mat-card-content >            
+            <form class="formclass"  [formGroup] = "form">   
+                   
+                <hr class="hr_bd" style="background-color: {{hrAttrib.hr_bd.color}} ">   
+                <div>
+                    <mat-form-field  id="componenfill">
+                        <mat-label>Base de Datos</mat-label>
+                        <input matInput placeholder="Ingrese la base de datos aquí!" formControlName="hr_bd">                       
+                    </mat-form-field>   
+                </div>     
+                
+                <div class="example-container" cdkScrollable id="componenfill">
+                    <button class="btn_form" 
+                            mat-raised-button #tooltip="matTooltip"
+                            matTooltip="Info about the action"
+                            matTooltipHideDelay="100000"
+                            aria-label="Probar Conexion"
+                            (click)="getProbarConexion()"
+                            >
+                      PROBAR CONEXIÓN
+                    </button>
+                </div>   
+                <br><br>
+                <div class="example-container" cdkScrollable id="componenfill">
+                    <button class="btn_form" 
+                            mat-raised-button #tooltip="matTooltip"
+                            matTooltip="Info about the action"
+                            matTooltipHideDelay="100000"
+                            aria-label="Button that displays a tooltip that hides when scrolled out of the container"
+                            (click)="getGuardarConexion()"
+                            >
+                      GUARDAR CONEXIÓN
+                    </button>
+                </div>   
+                <div class="example-container" cdkScrollable id="componenfill">
+                    <button class="btn_form" 
+                            mat-raised-button #tooltip="matTooltip"
+                            matTooltip="Info about the action"
+                            matTooltipHideDelay="100000"
+                            aria-label="Button that displays a tooltip that hides when scrolled out of the container"
+                            (click)="setCrearBaseDeDatos()"
+                            >
+                      CREAR BASE DE DATOS
+                    </button>
+                </div>                                                                                                                            
+            </form>                      
+        </mat-card-content>
+    </mat-card>
+</div>
+  

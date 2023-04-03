@@ -1,0 +1,145 @@
+<app-toolbar [ind_undo]=true [empresa]="_empresa"></app-toolbar>
+
+<div class="descripcion">
+    <span class="example-spacer"></span>
+    <span>Configuración de parametros</span>
+</div>
+<div class="contenido">
+    <mat-card>
+        <mat-card-content >  
+            <mat-accordion>
+                <mat-expansion-panel (opened)="panelOpenState = true"
+                                     (closed)="panelOpenState = false">
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>
+                      Parametros Obligatorios
+                    </mat-panel-title>
+                    <!-- <mat-panel-description>
+                        <mat-icon> {{panelOpenState ? 'Toggle On' : 'Toggle Off'}} </mat-icon>
+                    </mat-panel-description> -->
+                  </mat-expansion-panel-header>
+                    <form class="formclass"  [formGroup] = "formC">
+                        <mat-grid-list [cols]="breakpoint" rowHeight="2:0.5" (window:resize)="onResize($event)">   
+                            <mat-grid-tile class="content-left"><mat-checkbox class="chechAuth" formControlName="hr_id">IDENTIFICACION</mat-checkbox></mat-grid-tile>
+                            <mat-grid-tile class="content-left"><mat-checkbox class="chechAuth" formControlName="hr_td">TIPODOCUMENTO</mat-checkbox></mat-grid-tile>
+                            <mat-grid-tile class="content-left"><mat-checkbox class="chechAuth" formControlName="hr_tp">TIPO DE PERSONA</mat-checkbox></mat-grid-tile>
+                            <mat-grid-tile class="content-left"><mat-checkbox class="chechAuth" formControlName="hr_pn">PRIMERNOMBRE</mat-checkbox></mat-grid-tile>
+                            <mat-grid-tile class="content-left"><mat-checkbox class="chechAuth" formControlName="hr_sn">SEGUNDONOMBRE</mat-checkbox></mat-grid-tile>
+                            <mat-grid-tile class="content-left"><mat-checkbox class="chechAuth" formControlName="hr_pa">PRIMER APELLIDO</mat-checkbox></mat-grid-tile>
+                            <mat-grid-tile class="content-left"><mat-checkbox class="chechAuth" formControlName="hr_sa">SEGUNDO APELLIDO</mat-checkbox></mat-grid-tile>
+                            <mat-grid-tile class="content-left"><mat-checkbox class="chechAuth" formControlName="hr_rs">RAZONSOCIAL</mat-checkbox></mat-grid-tile>
+                            <mat-grid-tile class="content-left"><mat-checkbox class="chechAuth" formControlName="hr_di">DIRECCION</mat-checkbox></mat-grid-tile>
+                            <mat-grid-tile class="content-left"><mat-checkbox class="chechAuth" formControlName="hr_te">TELEFONO</mat-checkbox></mat-grid-tile>
+                            <mat-grid-tile class="content-left"><mat-checkbox class="chechAuth" formControlName="hr_em">EMAIL</mat-checkbox></mat-grid-tile>
+                            <mat-grid-tile class="content-left"><mat-checkbox class="chechAuth" formControlName="hr_ci">CIUDAD</mat-checkbox></mat-grid-tile>
+                            <mat-grid-tile class="content-left"><mat-checkbox class="chechAuth" formControlName="hr_de">DEPARTAMENTO</mat-checkbox></mat-grid-tile>
+                            <mat-grid-tile class="content-left"><mat-checkbox class="chechAuth" formControlName="hr_rg">REGIMEN</mat-checkbox></mat-grid-tile>
+                            <mat-grid-tile class="content-left"><mat-checkbox class="chechAuth" formControlName="hr_rt">REGIMEN TRIBUTARIO</mat-checkbox></mat-grid-tile>
+                        </mat-grid-list>
+                        <div class="example-container" cdkScrollable id="componenfill">
+                          <button class="btn_form" 
+                                  mat-raised-button #tooltip="matTooltip"
+                                  matTooltip ="Info about the action"
+                                  matTooltipHideDelay="100000"
+                                  aria-label="Bun scrolled out of the container"
+                                  (click) ="setParametros()">
+                            GUARDAR PARAMETROS
+                          </button>
+                        </div> 
+                    </form>
+                </mat-expansion-panel>
+
+                <mat-expansion-panel (opened)="panelOpenState = true"
+                                     (closed)="panelOpenState = false">
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>
+                      Parametros de configuracion
+                    </mat-panel-title>
+                    <!-- <mat-panel-description>
+                        <mat-icon> {{panelOpenState ? 'Toggle On' : 'Toggle Off'}} </mat-icon>
+                    </mat-panel-description> -->
+                  </mat-expansion-panel-header>
+                  <form class="formclass"  [formGroup] = "formP">
+                    <mat-grid-list [cols]="breakpointP" rowHeight="2:0.7" (window:resize)="onResize($event)"> 
+                      <mat-grid-tile>
+                      <div  id="idComponentill">
+                          <mat-form-field  id="componenfill">
+                              <mat-label>EMPRESA</mat-label>
+                              <input matInput placeholder="" formControlName="hr_ep" >                  
+                          </mat-form-field>   
+                      </div>
+                    </mat-grid-tile> 
+
+                      <!-- <mat-grid-tile> -->
+      
+                      <!-- <div  id="idComponentill">
+                          <mat-form-field  id="componenfill">
+                              <mat-label>LOGO</mat-label>
+                              <input matInput placeholder="" formControlName="hr_lg" >
+                              <mat-icon matSuffix>search</mat-icon>                        
+                          </mat-form-field>   
+                      </div> -->
+                      <!-- </mat-grid-tile> -->
+
+                      <mat-grid-tile>
+                        <div  id="idComponentill">
+                            <mat-form-field  id="componenfill">
+                                <mat-label>COLOR BANNER</mat-label>
+                                <input matInput type="color" placeholder="" formControlName="hr_cb" >                     
+                            </mat-form-field>   
+                        </div>  
+                      </mat-grid-tile>
+
+                      <mat-grid-tile>
+                        <div  id="idComponentill">
+                            <mat-form-field  id="componenfill">
+                                <mat-label>COLOR TEXTO BANNER</mat-label>
+                                <input matInput type="color" placeholder="" formControlName="hr_tb" >                     
+                            </mat-form-field>   
+                        </div>  
+                      </mat-grid-tile>
+
+                      <mat-grid-tile>  
+                        <div  id="idComponentill">
+                            <mat-form-field  id="componenfill">
+                                <mat-label>COLOR FONDO</mat-label>
+                                <input matInput type="color" placeholder="" formControlName="hr_cf" >                     
+                            </mat-form-field>   
+                        </div> 
+                      </mat-grid-tile>
+
+                      <mat-grid-tile >
+                        <div  id="idComponentill">
+                            <mat-form-field  id="componenfill">
+                                <mat-label>COLOR TEXTO FONDO</mat-label>
+                                <input matInput type="color" placeholder="" formControlName="hr_tf" >                     
+                            </mat-form-field>   
+                        </div> 
+                      </mat-grid-tile>
+
+                      <mat-grid-tile>
+                        <div  id="idComponentill">
+                            <mat-form-field  id="componenfill">
+                                <mat-label>PIE DE PAGINA</mat-label>
+                                <input matInput  placeholder="" formControlName="hr_pg" >                     
+                            </mat-form-field>   
+                        </div>   
+                      </mat-grid-tile>                                           
+                    </mat-grid-list>
+                    <div class="example-container" cdkScrollable id="componenfill">
+                      <button class="btn_form" 
+                              mat-raised-button #tooltip="matTooltip"
+                              matTooltip ="Info about the action"
+                              matTooltipHideDelay="100000"
+                              aria-label="Bun scrolled out of the container"
+                              (click) ="setConfGeneral()">
+                        GUARDAR CONFIGURACIONES
+                      </button>
+                  </div>
+                  </form>
+                </mat-expansion-panel>
+              </mat-accordion>
+        </mat-card-content>
+    </mat-card>
+</div>
+  

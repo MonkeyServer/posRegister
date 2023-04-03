@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+    --fondo-color: #ffff;
+    --text-color: #0000;
+    --fondo-banner-color: #ffff;
+    --text-banner-color: #ffff;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-color: var(--fondo-color); color:var(--fondo-text-color); }
+/* background-color:#783064 */
+.mdc-form-field{ color:var(--text-color) !important;}
+.mat-grid-tile.content-left > .mat-grid-tile-content { justify-content: flex-start; }
+.mat-mdc-snack-bar-label{background-color: #e0e6f6;}
+.mdc-snackbar__surface{background-color: #e0e6f6 !important;}
+/* .matsnackbarlabel{height: auto;} */

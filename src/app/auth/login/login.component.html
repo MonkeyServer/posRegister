@@ -1,0 +1,44 @@
+<app-toolbar [ind_undo]=false [empresa]="_empresa"></app-toolbar>
+
+<div class="descripcion">
+    <span class="example-spacer"></span>
+    <span>Fomulario De Inicio Sesión</span>
+</div>
+<div class="contenido">
+    <mat-card>
+        <mat-card-content >  
+            <form  class="formclass"  [formGroup] = "form">   
+                   
+                <hr class="hr_us">   
+                <div id="idComponentill">
+                    <mat-form-field  id="componenfill">
+                        <mat-label>Usuario</mat-label>
+                        <input matInput placeholder="Ingrese su usuario aquí!" formControlName="hr_us">                       
+                    </mat-form-field>   
+                </div>   
+                
+                <hr class="hr_ct">   
+                <div id="idComponentill">
+                    <mat-form-field  id="componenfill">
+                        <mat-label>Contraseña</mat-label>
+                        <input matInput type="password" placeholder="Contraseña" formControlName="hr_ct">                       
+                    </mat-form-field>   
+                </div> 
+                
+                
+                <div class="example-container" cdkScrollable id="componenfill">
+                    <button class="btn_form" 
+                            mat-raised-button #tooltip="matTooltip"
+                            matTooltip="Info about the action"
+                            matTooltipHideDelay="100000"
+                            aria-label="Button that displays a tooltip that hides when scrolled out of the container"
+                            (click)="validarUsuario()"
+                            >
+                      INICIAR SESIÓN
+                    </button>
+                </div>                                                                                                                              
+            </form>  
+        </mat-card-content>
+    </mat-card>
+</div>
+  

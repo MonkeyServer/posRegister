@@ -1,0 +1,52 @@
+
+<app-toolbar [ind_undo]=false [empresa]="_empresa"></app-toolbar> 
+
+<div class="descripcion">
+    <span class="example-spacer"></span>
+    <span>Menu Registro Cliente</span>
+</div>
+<div class="contenido">
+    <mat-card>
+        <mat-card-content >  
+            <hr style="background-color: white ">           
+            <div class="div-container" id="componenfill">
+                <button class="btn_form" 
+                        mat-raised-button #tooltip="matTooltip"
+                        matTooltip="Info about the action"
+                        matTooltipHideDelay="100000"
+                        aria-label="Probar Conexion"
+                        routerLink="/config"
+                        >
+                  CONFIGURAR CONEXIÓN
+                </button>
+            </div>  
+            <hr style="background-color: white ">           
+            <div class="div-container" id="componenfill">
+                <button class="btn_form" 
+                        mat-raised-button #tooltip="matTooltip"
+                        matTooltip="Info about the action"
+                        matTooltipHideDelay="100000"
+                        aria-label="Probar Conexion"
+                        routerLink="/configLocal"
+                        >
+                  CONFIGURAR CONEXIÓN LOCAL
+                </button>
+            </div>  
+             
+            <br>
+            <hr style="background-color: white "> 
+            <div class="div-container" id="componenfill">
+                <button class="btn_form" 
+                        mat-raised-button #tooltip="matTooltip"
+                        matTooltip="Info about the action"
+                        matTooltipHideDelay="100000"
+                        aria-label="Button that displays a tooltip that hides when scrolled out of the container"
+                        routerLink="/parametrizacion"
+                        >
+                    CONFIGURAR PARAMETROS
+                </button>
+            </div>           
+        </mat-card-content>
+    </mat-card>
+</div>
+  

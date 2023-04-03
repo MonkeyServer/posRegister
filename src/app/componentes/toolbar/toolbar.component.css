@@ -1,0 +1,51 @@
+*{
+    background-color: var(--fondo-banner-color);
+    color: var(--text-banner-color);
+   
+}
+
+mat-toolbar-row{
+    display: grid;
+    place-items: center;
+
+}
+
+.toolbar-div{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    place-items: center;  
+    align-items: center; 
+    justify-content: center;
+}
+
+.retorno{
+    flex:1;
+}
+.empresa{
+    display: flex;
+    flex:5;
+    /* align-items: center; 
+    justify-content: center; */
+    margin-left: 35%;
+}
+@media (max-width: 900px) {
+    .empresa{
+        margin-left: 30%;
+    }
+    
+}
+
+@media (max-width: 552px) {
+    .empresa{
+        margin-left: 25%;
+    }
+    
+}
+
+@media (max-width: 300px) {
+    .empresa{
+        margin-left: 20%;
+    }
+    
+}

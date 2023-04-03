@@ -1,0 +1,20 @@
+<mat-toolbar>    
+    <!-- <mat-toolbar-row> -->
+        <div class="toolbar-div">
+            <div class="retorno">
+                <button mat-icon-button  routerLink="/menu"  *ngIf="ind_undo">
+                    <mat-icon> undo</mat-icon>
+                </button>
+            </div>
+            <div class="empresa">
+                <span>{{empresa}}</span>
+                <!-- <mat-icon class="example-icon" aria-hidden="false" aria-label="Example user verified icon">verified_user</mat-icon> -->
+            </div> 
+            <div class="Cerrar">
+                <button mat-icon-button (click)="cerrarSesion()"  *ngIf="ind_undo">
+                    <mat-icon> logout</mat-icon>
+                </button>
+            </div>          
+        </div>
+    <!-- </mat-toolbar-row> -->
+</mat-toolbar>
